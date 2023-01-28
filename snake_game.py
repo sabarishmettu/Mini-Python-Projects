@@ -1,16 +1,19 @@
 import turtle
 import time
 import random
+
 delay = 0.1
-#score
+
+#Score
 score = 0
 high_score = 0
-#set up screen
+
+#Set up the screen
 wn = turtle.Screen()
 wn.title("Snake Game")
 wn.bgcolor("green")
 wn.setup(width=600, height=600)
-wn.tracer(0) #turns off screen updates
+wn.tracer(0) #turns off the screen updates
 
 #Snake head
 head = turtle.Turtle()
@@ -39,7 +42,8 @@ pen.color("white")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Score: 0  High Score: 0", align="center", font=("Courier", 24, "normal"))
+pen.write("Score: 0    High Score: 0", align="center", font=("Courier", 24, "normal"))
+
 
 #Functions
 def go_up():
@@ -106,7 +110,7 @@ while True:
         delay = 0.1
 
         pen.clear()
-        pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal")) 
+        pen.write("Score: {} High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal")) 
 
 
     #Check for a collision with the food
@@ -134,8 +138,7 @@ while True:
             high_score = score
         
         pen.clear()
-        pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal")) 
-
+        pen.write("Score: {} High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal")) 
 
     #Move the end segments first in reverse order
     for index in range(len(segments)-1, 0, -1):
@@ -173,7 +176,7 @@ while True:
         
             #Update the score display
             pen.clear()
-            pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
+            pen.write("Score: {} High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal"))
 
     time.sleep(delay)
 
